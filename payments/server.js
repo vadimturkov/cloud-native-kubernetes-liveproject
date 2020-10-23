@@ -1,6 +1,6 @@
 const bodyParser = require("body-parser");
 const express = require("express");
-const logger = pino();
+const logger = require("pino")();
 
 const config = require("./config")();
 
