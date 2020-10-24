@@ -9,3 +9,9 @@ resources:
 - redis.yaml
 - payment.yaml
 
+secretGenerator:
+- name: redis-conf
+  namespace: sns
+  files: 
+    - secrets/redis.conf
+    - secrets/redis_password
