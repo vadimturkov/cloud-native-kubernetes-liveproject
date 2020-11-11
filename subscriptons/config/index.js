@@ -1,12 +1,8 @@
-let determineConfigDir = () => {
-  if (process.env.CONFIG_DIR === undefined || process.env.CONFIG_DIR == null) {
-    return ".";
-  }
-
-  return process.env.CONFIG_DIR;
+const determineConfigDir = () => {
+  return process.env.CONFIG_DIR || ".";
 };
 
-let determineConfigFile = () => {
+const determineConfigFile = () => {
   const configDir = determineConfigDir();
   return `${configDir}/config.json`;
 };
