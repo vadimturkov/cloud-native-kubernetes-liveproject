@@ -5,13 +5,14 @@ generatorOptions:
   disableNameSuffixHash: true
 
 resources:
-- ns.yaml
-- redis.yaml
-- payment.yaml
+  - ns.yaml
+  - redis.yaml
+  - payment.yaml
+  - subscription.yaml
 
 secretGenerator:
-- name: redis-conf
-  namespace: sns
-  files: 
-    - secrets/redis.conf
-    - secrets/redis_password
+  - name: redis-conf
+    namespace: sns
+    files:
+      - secrets/redis.conf
+      - secrets/redis_password
