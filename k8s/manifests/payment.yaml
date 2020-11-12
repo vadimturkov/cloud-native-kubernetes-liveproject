@@ -15,6 +15,10 @@ spec:
       labels:
         app: payment
     spec:
+      volumes:
+        - name: payment-config
+          configMap:
+              name: payment-config
       containers:
         - name: payment
           image: sns-payment:latest
@@ -31,6 +35,9 @@ spec:
                   name: redis-conf
                   key: redis_password
           imagePullPolicy: "Never"
+          volumeMounts:
+            - name: payment-config
+              mountPath: "/opt/sns/config"
           resources:
             requests:
               cpu: 250m
